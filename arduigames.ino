@@ -1,7 +1,7 @@
+#include "ledmatrix.h"
+
+
 #ifndef ARDUINO
-#include <cstdlib>
-#include <cstdio>
-#include <cstring>
 #include <unistd.h>
 #endif
 
@@ -11,6 +11,7 @@ public:
     int y;
 };
 
+/*
 class LedMatrix {
 public:
     bool *leds;
@@ -69,7 +70,7 @@ public:
 #endif
     }
 };
-
+*/
 
 // Maak hier een enum van?
 #define UP 0
