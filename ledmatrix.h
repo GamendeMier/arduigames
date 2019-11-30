@@ -4,6 +4,17 @@
 #include <cstring>
 #endif
 
+struct Vec2 {
+public:
+    int x;
+    int y;
+};
+
+struct FVec2 {
+    float x;
+    float y;
+};
+
 class LedMatrix {
 public:
     bool *leds;

@@ -7,8 +7,6 @@
 #endif
 
 
-
-
 #define BUT1 1
 #define BUT2 18
 #define BUT3 19
@@ -28,22 +26,17 @@ void setup() {
     game = new Snake();
 }
 
-// Delay in milliseconden
-#define DELAY 1000
-
 void loop() {
 #ifdef ARDUINO
-    delay(DELAY);
     if (analogRead(BUT2) != 0) {
         game->direction = calc_direction(game->direction, TURN_LEFT);
     } else if (analogRead(BUT3) != 0) {
         game->direction = calc_direction(game->direction, TURN_RIGHT);
     }
 #else
-    // deze functie gebruikt microseconden
-    usleep(DELAY * 1000);
+    //usleep(1000000);
 #endif
-    game->update();
+    game->update(0.0001f);
     game->matrix->draw_all();
 }
 
