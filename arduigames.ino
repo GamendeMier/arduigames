@@ -3,36 +3,25 @@
 #include "snake.h"
 
 #ifndef ARDUINO
-#include <unistd.h>
+// hier moeten libraries komen die niet voor arduino zijn
 #endif
 
 
-#define BUT1 1
-#define BUT2 18
-#define BUT3 19
+#define AXIS_X A0
+#define AXIS_Y A1
+#define BTN1 D2
 
 Snake *game;
 
 void setup() {
 #ifdef ARDUINO
-    // Pin 2 tot en met 17 zijn output
-    for (int i = 2; i <= 17; i++)
-        pinMode(i,OUTPUT);
-
-    pinMode(BUT1,INPUT);
-    pinMode(BUT2,INPUT);
-    pinMode(BUT3,INPUT);
+    LedMatrix::setup();
 #endif
     game = new Snake();
 }
 
 void loop() {
 #ifdef ARDUINO
-    if (analogRead(BUT2) != 0) {
-        game->direction = calc_direction(game->direction, TURN_LEFT);
-    } else if (analogRead(BUT3) != 0) {
-        game->direction = calc_direction(game->direction, TURN_RIGHT);
-    }
 #else
     //usleep(1000000);
 #endif

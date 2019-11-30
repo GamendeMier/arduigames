@@ -2,6 +2,14 @@
 #include <cstdlib>
 #include <cstdio>
 #include <cstring>
+#else
+#include "LedControl.h"
+LedControl lc=LedControl(12,11,10,1);
+
+// pin 12 is connected to the MAX7219 pin 1
+// pin 11 is connected to the CLK pin 13
+// pin 10 is connected to LOAD pin 12
+// 1 as we are only using 1 MAX7219
 #endif
 
 struct Vec2 {
@@ -29,6 +37,14 @@ public:
         memset(leds, false, sizeof(bool)*width*height);
     }
 
+    static void setup() {
+#ifdef ARDUINO
+        lc.shutdown(0,false);// turn off power saving, enables display
+        lc.setIntensity(0,8);// sets brightness (0~15 possible values)
+        lc.clearDisplay(0);// clear screen
+#endif
+    }
+
     bool is_valid(int x, int y) {
         if (x < 0 || x >= width || y < 0 || y >= height)
             return false;
@@ -53,15 +69,17 @@ public:
 
     void draw_all() {
 #ifdef ARDUINO
-        // Verander dit voor het nieuwe ding
         for (int row = 0; row < height; row++) {
-            digitalWrite(row+10, HIGH);
+            //digitalWrite(row+10, HIGH);
 
-            for (int col = 0; col < width; col++)
-                digitalWrite(col+2, get_led(col, row) ? LOW : HIGH);
+            for (int col = 0; col < width; col++) {
+                lc.setLed(0,col,row,true);
+                delay(25);
+                //digitalWrite(col+2, get_led(col, row) ? LOW : HIGH);
+            }
 
-            delayMicroseconds(1000);
-            digitalWrite(row+10, LOW);
+            //delayMicroseconds(1000);
+            //digitalWrite(row+10, LOW);
         }
 #else
         printf("\x1b[8A");

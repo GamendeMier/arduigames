@@ -9,7 +9,7 @@ public:
 
     int paddle_pos;
 
-    int state
+    int state;
 
     BlockDestroyer() {
         matrix = new LedMatrix(8, 8);
@@ -19,7 +19,7 @@ public:
 
 
 
-    void update() {
+    void update(float delta) {
         
     }
 }
