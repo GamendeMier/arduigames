@@ -22,6 +22,7 @@ void setup() {
 
 void loop() {
 #ifdef ARDUINO
+    
 #else
     //usleep(1000000);
 #endif
