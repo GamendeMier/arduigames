@@ -73,7 +73,7 @@ public:
             //digitalWrite(row+10, HIGH);
 
             for (int col = 0; col < width; col++) {
-                lc.setLed(0,col,row,true);
+                lc.setLed(0,col,row,get_led(col,row));
                 delay(25);
                 //digitalWrite(col+2, get_led(col, row) ? LOW : HIGH);
             }
