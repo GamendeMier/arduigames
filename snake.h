@@ -61,7 +61,7 @@ public:
         f_head.y = (int)tail[0].y;
     }
 
-    void update(float delta) {
+    int update(float delta) {
         switch (direction) {
         case UP:
             f_head.y -= delta;
@@ -105,5 +105,6 @@ public:
             }
             matrix->set_led(tail[0].x, tail[0].y);
         }
+        return GAME_OK;
     }
 };

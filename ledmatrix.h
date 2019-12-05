@@ -1,3 +1,6 @@
+#ifndef LEDMATRIX_H
+#define LEDMATRIX_H
+
 #ifndef ARDUINO
 #include <cstdlib>
 #include <cstdio>
@@ -5,11 +8,6 @@
 #else
 #include "LedControl.h"
 LedControl lc=LedControl(11,13,10,1);
-
-// pin 12 is connected to the MAX7219 pin 1
-// pin 11 is connected to the CLK pin 13
-// pin 10 is connected to LOAD pin 12
-// 1 as we are only using 1 MAX7219
 #endif
 
 struct Vec2 {
@@ -66,6 +64,9 @@ public:
         return leds[y*width+x];
     }
 
+    void clear_row(int y) {
+        memset(leds+y*width, false, sizeof(bool)*width);
+    }
 
     void draw_all() {
 #ifdef ARDUINO
@@ -93,3 +94,4 @@ public:
 };
 
 
+#endif // LEDMATRIX_H
