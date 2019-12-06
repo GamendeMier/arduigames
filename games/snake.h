@@ -4,10 +4,6 @@
 #include "game.h"
 #include "util.h"
 
-enum Direction {
-    Up, Down, Left, Right
-};
-
 class Snake : public Game {
 private:
     Vec2<float> head;
@@ -21,7 +17,6 @@ public:
     Snake(int dataPin, int clkPin, int csPin, int start_len);
 
     void update(float delta);
-    void draw();
 };
 
 #endif // SNAKE_H

@@ -77,6 +77,5 @@ void Snake::update(float delta) {
         }
 
         setLed(0, tail[0].x, tail[0].y, true);
-        
     }
 }
