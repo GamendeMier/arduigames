@@ -5,12 +5,17 @@
 
 class Snake : public Game {
 private:
+    Direction dir;
+
     Vec2<float> head;
     Vec2<int> *tail;
 
     int tail_len;
 
-    Direction dir;
+    Vec2<int> candy;
+
+    void new_candy();
+
 
 public:
     Snake(int dataPin, int clkPin, int csPin, int start_len);
