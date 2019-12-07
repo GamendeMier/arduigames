@@ -1,5 +1,4 @@
-#ifndef SNAKE_H
-#define SNAKE_H
+#pragma once
 
 #include "game.h"
 #include "util.h"
@@ -18,5 +17,3 @@ public:
 
     void update(float delta);
 };
-
-#endif // SNAKE_H

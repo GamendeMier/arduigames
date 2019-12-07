@@ -1,5 +1,4 @@
-#ifndef GAME_ENGINE_H
-#define GAME_ENGINE_H
+#pragma once
 
 #include "LedControl.h"
 
@@ -10,5 +9,3 @@ protected:
 public:
     virtual void update(float delta);
 };
-
-#endif // GAME_ENGINE_H

@@ -1,5 +1,4 @@
-#ifndef UTIL_H
-#define UTIL_H
+#pragma once
 
 enum Direction {
     Up, Down, Left, Right
@@ -10,6 +9,3 @@ struct Vec2 {
     T x;
     T y;
 };
-
-
-#endif // UTIL_H
