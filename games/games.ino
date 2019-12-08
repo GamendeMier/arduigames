@@ -1,13 +1,13 @@
 #include "game.h"
-#include "snake.h"
-#include "arkanoid.h"
+#include "gameselector.h"
 
-Game *game;
+GameSelector *game_selector;
 
 void setup() {
-    game = new Arkanoid(12, 11, 10, 4);
+    Game::setup();
+    game_selector = new GameSelector(13, 11, 10);
 }
 
 void loop() {
-    game->update(1.0f);
+    game_selector->update(1.0f);
 }
