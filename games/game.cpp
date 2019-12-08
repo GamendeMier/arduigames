@@ -23,7 +23,7 @@ static float Game::get_axis_y() {
 }
 
 static bool Game::button_pressed() {
-
+    return digitalRead(2) == HIGH;
 }
 
 
