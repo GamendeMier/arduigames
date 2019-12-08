@@ -39,16 +39,16 @@ Snake::Snake(int dataPin, int clkPin, int csPin, int start_len): Game(dataPin, c
 
 void Snake::update(float delta) {
     switch (dir) {
-    case Up:
+    case Direction::Up:
         head.y -= delta;
         break;
-    case Left:
+    case Direction::Left:
         head.x -= delta;
         break;
-    case Down:
+    case Direction::Down:
         head.y += delta;
         break;
-    case Right:
+    case Direction::Right:
         head.x += delta;
         break;
     }
@@ -67,16 +67,16 @@ void Snake::update(float delta) {
         }
 
         switch (dir) {
-        case Up:
+        case Direction::Up:
             tail[0].y -= 1;
             break;
-        case Left:
+        case Direction::Left:
             tail[0].x -= 1;
             break;
-        case Down:
+        case Direction::Down:
             tail[0].y += 1;
             break;
-        case Right:
+        case Direction::Right:
             tail[0].x += 1;
             break;
         }
