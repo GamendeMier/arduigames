@@ -19,7 +19,7 @@ private:
     State state;
 
 public:
-    Arkanoid(int dataPin, int clkPin, int csPin, int start_len);
+    Arkanoid(int dataPin, int clkPin, int csPin);
 
     void update(float delta);
 };
