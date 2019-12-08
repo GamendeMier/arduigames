@@ -10,7 +10,7 @@ enum class State {
 };
 
 class Arkanoid : public Game {
-public:
+private:
     float paddle_pos;
 
     Vec2<float> ball;
@@ -18,6 +18,7 @@ public:
 
     State state;
 
+public:
     Arkanoid(int dataPin, int clkPin, int csPin, int start_len);
 
     void update(float delta);
