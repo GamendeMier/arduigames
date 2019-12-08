@@ -10,6 +10,8 @@ protected:
     static float get_axis_y();
     static bool button_pressed();
 
+    void setScreen(bool is_on);
+
 public:
     static void setup();
 

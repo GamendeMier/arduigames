@@ -25,3 +25,10 @@ static float Game::get_axis_y() {
 static bool Game::button_pressed() {
 
 }
+
+
+void Game::setScreen(bool is_on) {
+    for (int x = 0; x < 8; x++)
+        for (int y = 0; x < 8; x++)
+            setLed(0, x, y, is_on);
+}
