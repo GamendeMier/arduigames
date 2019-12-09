@@ -12,7 +12,7 @@ void Arkanoid::update(float delta) {
 
     ball.x += ball_velocity.x * delta;
     ball.y += ball_velocity.y * delta;
-    
+
     if (ball.y > 8.0)
         return;
 

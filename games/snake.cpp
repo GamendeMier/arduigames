@@ -23,7 +23,7 @@ void Snake::calc_direction(int old, bool turn) {
             return LEFT;
         case RIGHT:
             return DOWN;
-        }        
+        }
     }
     return 0;
 }*/

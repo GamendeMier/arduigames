@@ -6,7 +6,7 @@ GameSelector::GameSelector(int dataPin, int clkPin, int csPin)
     , clkPin(clkPin)
     , csPin(csPin)
 {
-    game = nullptr;    
+    game = nullptr;
 }
 
 
@@ -29,7 +29,7 @@ void GameSelector::update(float delta) {
     }
 
     setLed(0, (int)current_selection, 7, false);
-    
+
     current_selection += get_axis_x()*delta*0.0001;
 
     setLed(0, (int)current_selection, 7, true);
