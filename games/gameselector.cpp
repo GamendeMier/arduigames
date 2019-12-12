@@ -6,6 +6,10 @@ GameSelector::GameSelector(int dataPin, int clkPin, int csPin)
     , clkPin(clkPin)
     , csPin(csPin)
 {
+    shutdown(0,false);// turn off power saving, enables display
+    setIntensity(0,8);// sets brightness (0~15 possible values)
+    clearDisplay(0);// clear screen
+
     game = nullptr;
 }
 

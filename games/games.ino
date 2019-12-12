@@ -16,14 +16,16 @@ void loop() {
 
 #include "game.h"
 #include "snake.h"
+#include "arkanoid.h"
 
 Game *game;
 
 void setup() {
     Game::setup();
-    game = new Snake(13, 11, 10, 1);
+    game = new Snake(11, 13, 10, 5);
+
 }
 
 void loop() {
-    game->update(0.0000001f);
+    game->update(0.0005f);
 }

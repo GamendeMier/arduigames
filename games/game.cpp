@@ -3,23 +3,22 @@
 
 static void Game::setup() {
     pinMode(2, INPUT);
-
-    pinMode(13, OUTPUT);
-    pinMode(11, OUTPUT);
-    pinMode(10, OUTPUT);
+    pinMode(A0, INPUT);
+    pinMode(A1, INPUT);
 }
 
-Game::Game(int dataPin, int clkPin, int csPin) : LedControl(dataPin, clkPin, csPin) {
-
+Game::Game(int dataPin, int clkPin, int csPin) : LedControl(dataPin, clkPin, csPin, 1) {
 }
 
 // Check if this is correct
 static float Game::get_axis_x() {
-    return ((float)(analogRead(A0)-512))/512.f;
+    return analogRead(A0);
+    //return ((float)(analogRead(A0)-512))/512.f;
 }
 
 static float Game::get_axis_y() {
-    return ((float)(analogRead(A1)-512))/512.f;
+    return analogRead(A1);
+    //return ((float)(analogRead(A1)-512))/512.f;
 }
 
 static bool Game::button_pressed() {

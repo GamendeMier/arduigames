@@ -33,7 +33,7 @@ int game_state;
 
 void loop() {
     if (game_state != GAME_OVER) {
-        game_state = game->update(0.0001f);
+        game_state = game->update(1.0f);
         game->matrix->draw_all();
     }
 }
