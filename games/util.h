@@ -4,7 +4,7 @@ enum class Direction {
     Up, Down, Left, Right
 };
 
-template<class T>
+template<typename T>
 struct Vec2 {
     T x;
     T y;
