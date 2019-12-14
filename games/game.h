@@ -1,6 +1,12 @@
 #pragma once
 
+// Fix for auto completion
+#ifdef ARDUINO
 #include "LedControl.h"
+#else
+#include "../../libraries/LedControl/src/LedControl.h"
+#endif
+
 
 class Game : public LedControl {
 protected:
