@@ -3,7 +3,7 @@
 
 LedControl _lc(DATA_PIN, CLOCK_PIN, CS_PIN, 1);
 
-static void Game::setup() {
+void Game::setup() {
     _lc.shutdown(0,false);
     _lc.setIntensity(0,8);
     _lc.clearDisplay(0);
@@ -17,17 +17,17 @@ Game::Game() {
 }
 
 // Check if this is correct
-static float Game::get_axis_x() {
+float Game::get_axis_x() {
     return analogRead(A0);
     //return ((float)(analogRead(A0)-512))/512.f;
 }
 
-static float Game::get_axis_y() {
+float Game::get_axis_y() {
     return analogRead(A1);
     //return ((float)(analogRead(A1)-512))/512.f;
 }
 
-static bool Game::button_pressed() {
+bool Game::button_pressed() {
     return digitalRead(2) == HIGH;
 }
 
