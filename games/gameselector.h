@@ -6,16 +6,12 @@
 
 class GameSelector : public Game {
 private:
-    int dataPin;
-    int clkPin;
-    int csPin;
-
     Game *game;
 
     float current_selection;
 
 public:
-    GameSelector(int dataPin, int clkPin, int csPin);
+    GameSelector();
 
     void update(float delta);
 };

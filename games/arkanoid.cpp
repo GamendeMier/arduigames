@@ -1,6 +1,6 @@
 #include "arkanoid.h"
 
-Arkanoid::Arkanoid(int dataPin, int clkPin, int csPin): Game(dataPin, clkPin, csPin) {
+Arkanoid::Arkanoid(): Game() {
     paddle_pos = 4.5f;
     ball = {4.0f, 4.0f};
     ball_velocity = {0.0f, 1.0f};

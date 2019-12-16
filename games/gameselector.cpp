@@ -1,11 +1,6 @@
 #include "gameselector.h"
 
-GameSelector::GameSelector(int dataPin, int clkPin, int csPin)
-    : Game(dataPin, clkPin, csPin)
-    , dataPin(dataPin)
-    , clkPin(clkPin)
-    , csPin(csPin)
-{
+GameSelector::GameSelector(): Game() {
     shutdown(0,false);// turn off power saving, enables display
     setIntensity(0,8);// sets brightness (0~15 possible values)
     clearDisplay(0);// clear screen
@@ -24,10 +19,10 @@ void GameSelector::update(float delta) {
         setScreen(false);
         switch (int(current_selection)) {
         case 0:
-            game = new Snake(dataPin, clkPin, csPin, 4);
+            game = new Snake(4);
             break;
         case 1:
-            game = new Arkanoid(dataPin, clkPin, csPin);
+            game = new Arkanoid();
             break;
         }
     }

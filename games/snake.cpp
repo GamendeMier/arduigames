@@ -28,7 +28,7 @@ void Snake::calc_direction(int old, bool turn) {
     return 0;
 }*/
 
-Snake::Snake(int dataPin, int clkPin, int csPin, int start_len): Game(dataPin, clkPin, csPin) {
+Snake::Snake(int start_len): Game() {
     shutdown(0,false);// turn off power saving, enables display
     setIntensity(0,8);// sets brightness (0~15 possible values)
     clearDisplay(0);// clear screen

@@ -7,7 +7,7 @@ static void Game::setup() {
     pinMode(A1, INPUT);
 }
 
-Game::Game(int dataPin, int clkPin, int csPin) : LedControl(dataPin, clkPin, csPin, 1) {
+Game::Game() : LedControl(DATA_PIN, CLOCK_PIN, CS_PIN, 1) {
 }
 
 // Check if this is correct

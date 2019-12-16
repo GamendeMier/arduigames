@@ -18,7 +18,7 @@ private:
 
 
 public:
-    Snake(int dataPin, int clkPin, int csPin, int start_len);
+    Snake(int start_len);
 
     void update(float delta);
 };
