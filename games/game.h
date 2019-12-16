@@ -11,13 +11,13 @@
 #define CLOCK_PIN 13
 #define CS_PIN 10
 
-class Game : public LedControl {
+class Game {
 protected:
     Game();
 
     static bool button_pressed();
 
-    void setScreen(bool is_on);
+    void set_led(int x, int y, bool state);
 
 public:
     static float get_axis_x();

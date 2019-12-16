@@ -8,7 +8,7 @@ Arkanoid::Arkanoid(): Game() {
 }
 
 void Arkanoid::update(float delta) {
-    setLed(0, (int)ball.x, (int)ball.y, true);
+    set_led((int)ball.x, (int)ball.y, true);
 
     ball.x += ball_velocity.x * delta;
     ball.y += ball_velocity.y * delta;
@@ -16,11 +16,11 @@ void Arkanoid::update(float delta) {
     if (ball.y > 8.0)
         return;
 
-    setLed(0, (int)ball.x, (int)ball.y, true);
+    set_led((int)ball.x, (int)ball.y, true);
 
-    setLed(0, ((int)paddle_pos)-1, 7, false);
-    setLed(0,  (int)paddle_pos   , 7, false);
-    setLed(0, ((int)paddle_pos)+1, 7, false);
+    set_led(((int)paddle_pos)-1, 7, false);
+    set_led( (int)paddle_pos   , 7, false);
+    set_led(((int)paddle_pos)+1, 7, false);
 
     switch (state) {
         case State::Left:
@@ -36,7 +36,7 @@ void Arkanoid::update(float delta) {
     else if (paddle_pos > 8.0)
         state = State::Left;
 
-    setLed(0, ((int)paddle_pos)-1, 7, true);
-    setLed(0,  (int)paddle_pos   , 7, true);
-    setLed(0, ((int)paddle_pos)+1, 7, true);
+    set_led(((int)paddle_pos)-1, 7, true);
+    set_led( (int)paddle_pos   , 7, true);
+    set_led(((int)paddle_pos)+1, 7, true);
 }

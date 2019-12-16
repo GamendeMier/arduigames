@@ -29,17 +29,13 @@ void Snake::calc_direction(int old, bool turn) {
 }*/
 
 Snake::Snake(int start_len): Game() {
-    shutdown(0,false);// turn off power saving, enables display
-    setIntensity(0,8);// sets brightness (0~15 possible values)
-    clearDisplay(0);// clear screen
-
     tail = (Vec2<int>*)malloc(sizeof(Vec2<int>)*8*8);
 
     tail_len = start_len;
 
     for (int i = 0; i < start_len; i++) {
         tail[i] = { start_len - i, 0 };
-        setLed(0,start_len-i,0,true);
+        set_led(start_len-i, 0, true);
     }
     head = { (float)start_len, 0.f };
 
@@ -86,7 +82,7 @@ void Snake::update(float delta) {
         (int)head.y != tail[0].y
    ) {
         //if (!((int)head.x == candy.x && (int)head.y == candy.y))
-            setLed(0, tail[tail_len-1].x, tail[tail_len-1].y, false);
+            set_led(tail[tail_len-1].x, tail[tail_len-1].y, false);
         //else
             //tail[tail_len++] = {0,0}; // can be anything
 
@@ -110,7 +106,7 @@ void Snake::update(float delta) {
             break;
         }
 
-        setLed(0, tail[0].x, tail[0].y, true);
+        set_led(tail[0].x, tail[0].y, true);
     }
 }
 
