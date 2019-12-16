@@ -1,5 +1,8 @@
 #include "game.h"
-#include "LedControl.h"
+
+Game::Game() {}
+
+#ifdef ARDUINO
 
 LedControl _lc(DATA_PIN, CLOCK_PIN, CS_PIN, 1);
 
@@ -13,8 +16,6 @@ void Game::setup() {
     pinMode(A1, INPUT);
 }
 
-Game::Game() {
-}
 
 // Check if this is correct
 float Game::get_axis_x() {
@@ -34,3 +35,9 @@ bool Game::button_pressed() {
 void Game::set_led(int x, int y, bool state) {
     _lc.setLed(0, x, y, state);
 }
+
+#else
+
+void Game::setup() {}
+
+#endif

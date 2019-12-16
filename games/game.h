@@ -2,14 +2,18 @@
 
 // Fix for auto completion
 #ifdef ARDUINO
+
 #include "LedControl.h"
-#else
-#include "../../libraries/LedControl/src/LedControl.h"
-#endif
 
 #define DATA_PIN 11
 #define CLOCK_PIN 13
 #define CS_PIN 10
+
+#else
+
+#include <curses.h>
+
+#endif
 
 class Game {
 protected:
