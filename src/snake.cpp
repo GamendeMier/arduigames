@@ -119,11 +119,15 @@ void Snake::update(float delta) {
 
 void Snake::new_candy() {
     Serial.println("Nieuw appel aan het maken");
-loop:
-    candy = {Game::random(0,8), Game::random(0,8)};
-    for (int i = 0; i < tail_len; i++) {
-        if (tail[i].x == candy.x && tail[i].y == candy.y)
-            goto loop;
+
+    bool candy_ok = false;
+    while (!candy_ok) {
+        candy_ok = true;
+        candy = {Game::random(0,8), Game::random(0,8)};
+        for (int i = 0; i < tail_len; i++) {
+            if (tail[i].x == candy.x && tail[i].y == candy.y)
+                candy_ok = false;
+        }
     }
     Serial.println("Klaar met nieuwe appel maken");
 }
