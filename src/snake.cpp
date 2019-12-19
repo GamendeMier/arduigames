@@ -123,7 +123,7 @@ void Snake::new_candy() {
     bool candy_ok = false;
     while (!candy_ok) {
         candy_ok = true;
-        candy = {Game::random(0,8), Game::random(0,8)};
+        candy = {random(0,8), random(0,8)};
         for (int i = 0; i < tail_len; i++) {
             Serial.print("Staart ");
             Serial.print(tail[i].x);

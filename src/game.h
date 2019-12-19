@@ -14,8 +14,6 @@ protected:
 
     void set_led(int x, int y, bool state);
 
-    static int random(int start, int end);
-
 public:
     static float get_axis_x();
     static float get_axis_y();
