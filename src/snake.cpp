@@ -112,7 +112,7 @@ void Snake::update(float delta) {
 
 void Snake::new_candy() {
 loop:
-    candy = {random(0,8), random(0,8)};
+    candy = {Game::random(0,8), Game::random(0,8)};
     for (int i = 0; i < tail_len; i++) {
         if (tail[i].x == candy.x && tail[i].y == candy.y)
             goto loop;

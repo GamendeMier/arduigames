@@ -3,12 +3,12 @@
 
 Snake *game;
 
-int main() {
+void setup() {
     Game::setup();
+
     game = new Snake(4);
+}
 
-    while (true)
-        game->update(0.00001);
-
-    return 0;
+void loop() {
+    game->update(0.0005f);
 }
