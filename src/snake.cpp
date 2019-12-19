@@ -118,24 +118,10 @@ void Snake::update(float delta) {
 }
 
 void Snake::new_candy() {
-    Serial.println("Nieuw appel aan het maken");
-
-    bool candy_ok = false;
-    while (!candy_ok) {
-        candy_ok = true;
-        candy = {random(0,8), random(0,8)};
-        for (int i = 0; i < tail_len; i++) {
-            Serial.print("Staart ");
-            Serial.print(tail[i].x);
-            Serial.print(tail[i].y);
-            Serial.println("");
-            Serial.print("Appel ");
-            Serial.print(candy.x);
-            Serial.print(candy.y);
-            Serial.println("");
-            if (tail[i].x == candy.x && tail[i].y == candy.y)
-                candy_ok = false;
-        }
+    loop:
+    candy = {random(0,8), random(0,8)};
+    for (int i = 0; i < tail_len; i++) {
+        if (tail[i].x == candy.x && tail[i].y == candy.y)
+            goto loop;
     }
-    Serial.println("Klaar met nieuwe appel maken");
 }
