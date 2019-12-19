@@ -5,6 +5,7 @@ Snake *game;
 
 void setup() {
     Game::setup();
+    Serial.begin(9600);
 
     game = new Snake(4);
 }
