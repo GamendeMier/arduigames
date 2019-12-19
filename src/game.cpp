@@ -28,12 +28,7 @@ bool Game::button_pressed() {
 }
 
 void Game::set_led(int x, int y, bool state) {
-    if (y == 7)
-        y = 0;
-    else if (y == 0)
-        y = 7;
-
-    _lc.setLed(0, x, y, state);
+    _lc.setLed(0, x, y+1, state);
 }
 
 int Game::random(int start, int end) {
