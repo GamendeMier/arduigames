@@ -41,7 +41,8 @@ Snake::Snake(int start_len): Game() {
 
     dir = Direction::Down;
 
-    //new_candy();
+    new_candy();
+    set_led(candy.x, candy.y, true);
 }
 
 void Snake::update(float delta) {
@@ -81,14 +82,20 @@ void Snake::update(float delta) {
         (int)head.x != tail[0].x ||
         (int)head.y != tail[0].y
    ) {
-        //if (!((int)head.x == candy.x && (int)head.y == candy.y))
+        if ((int)head.x == candy.x && (int)head.y == candy.y) {
+            tail[tail_len++] = {0,0}; // can be anything
+        } else {
             set_led(tail[tail_len-1].x, tail[tail_len-1].y, false);
-        //else
-            //tail[tail_len++] = {0,0}; // can be anything
+        }
 
         for (int i = tail_len-1; i > 0; i--) {
             tail[i].x = tail[i-1].x;
             tail[i].y = tail[i-1].y;
+        }
+
+        if ((int)head.x == candy.x && (int)head.y == candy.y) {
+            new_candy();
+            set_led(candy.x, candy.y, true);
         }
 
         switch (dir) {

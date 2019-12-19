@@ -28,7 +28,7 @@ bool Game::button_pressed() {
 }
 
 void Game::set_led(int x, int y, bool state) {
-    _lc.setLed(0, x, y+1, state);
+    _lc.setLed(0, x, y, state);
 }
 
 int Game::random(int start, int end) {
