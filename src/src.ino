@@ -1,7 +1,7 @@
 #include "game.h"
 #include "snake.h"
 
-Snake *game;
+Game *game;
 
 void setup() {
     Game::setup();
