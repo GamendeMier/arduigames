@@ -1,13 +1,14 @@
 #include "game.h"
+#include "gameselector.h"
 #include "snake.h"
 
-Game *game;
+GameSelector *game;
 
 void setup() {
     Game::setup();
     Serial.begin(9600);
 
-    game = new Snake(4);
+    game = new GameSelector();
 }
 
 void loop() {
