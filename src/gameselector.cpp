@@ -1,7 +1,6 @@
 #include "gameselector.h"
 
 GameSelector::GameSelector(): Game() {
-
     game = nullptr;
 }
 

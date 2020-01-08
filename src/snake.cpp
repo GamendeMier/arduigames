@@ -1,33 +1,5 @@
 #include "snake.h"
 
-/*
-void Snake::calc_direction(int old, bool turn) {
-    if (turn == TURN_LEFT) {
-        switch (old) {
-        case UP:
-            return LEFT;
-        case LEFT:
-            return DOWN;
-        case DOWN:
-            return RIGHT;
-        case RIGHT:
-            return UP;
-        }
-    } else {
-        switch (old) {
-        case UP:
-            return RIGHT;
-        case LEFT:
-            return UP;
-        case DOWN:
-            return LEFT;
-        case RIGHT:
-            return DOWN;
-        }
-    }
-    return 0;
-}*/
-
 Snake::Snake(int start_len): Game() {
     tail = (Vec2<int>*)malloc(sizeof(Vec2<int>)*8*8);
 
@@ -118,7 +90,7 @@ void Snake::update(float delta) {
 }
 
 void Snake::new_candy() {
-    loop:
+loop:
     candy = {random(0,8), random(0,8)};
     for (int i = 0; i < tail_len; i++) {
         if (tail[i].x == candy.x && tail[i].y == candy.y)
