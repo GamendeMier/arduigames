@@ -8,7 +8,7 @@ private:
     Direction dir;
 
     Vec2<float> head;
-    Vec2<int> *tail;
+    Vec2<int> tail[8*8];
 
     int tail_len;
 

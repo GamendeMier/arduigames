@@ -1,8 +1,6 @@
 #include "snake.h"
 
 Snake::Snake(int start_len): Game() {
-    tail = (Vec2<int>*)malloc(sizeof(Vec2<int>)*8*8);
-
     tail_len = start_len;
 
     for (int i = 0; i < start_len; i++) {
