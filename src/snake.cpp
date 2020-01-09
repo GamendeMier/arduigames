@@ -59,10 +59,11 @@ GameError Snake::update(float delta) {
         }
 
         for (int i = tail_len-1; i > 0; i--) {
-            for (int j = tail_len-1; j > 0; j--) {
+            /*
+            for (int j = tail_len-1; j > 0; j--)
                 if (i != j && tail[i].x == tail[j].x && tail[i].y == tail[j].y)
                     return GameError::Error;
-            }
+            */
             tail[i].x = tail[i-1].x;
             tail[i].y = tail[i-1].y;
         }
