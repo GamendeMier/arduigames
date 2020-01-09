@@ -15,7 +15,7 @@ Snake::Snake(int start_len): Game() {
     set_led(candy.x, candy.y, true);
 }
 
-void Snake::update(float delta) {
+GameError Snake::update(float delta) {
     auto ax = Game::get_axis_x();
     auto ay = Game::get_axis_y();
 
@@ -59,6 +59,10 @@ void Snake::update(float delta) {
         }
 
         for (int i = tail_len-1; i > 0; i--) {
+            for (int j = tail_len-1; j > 0; j--) {
+                if (i != j && tail[i].x == tail[j].x && tail[i].y == tail[j].y)
+                    return GameError::Error;
+            }
             tail[i].x = tail[i-1].x;
             tail[i].y = tail[i-1].y;
         }
@@ -85,6 +89,8 @@ void Snake::update(float delta) {
 
         set_led(tail[0].x, tail[0].y, true);
     }
+
+    return GameError::Ok;
 }
 
 void Snake::new_candy() {

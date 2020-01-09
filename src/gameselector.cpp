@@ -5,7 +5,7 @@ GameSelector::GameSelector(): Game() {
 }
 
 
-void GameSelector::update(float delta) {
+GameError GameSelector::update(float delta) {
     if (game != nullptr) {
         game->update(delta);
         return;
@@ -31,4 +31,5 @@ void GameSelector::update(float delta) {
 
     set_led((int)current_selection, select_row, true);
 
+    return GameError::Ok;
 }

@@ -22,5 +22,5 @@ private:
 public:
     Snake(int start_len);
 
-    void update(float delta);
+    GameError update(float delta);
 };

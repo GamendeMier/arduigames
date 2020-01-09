@@ -6,6 +6,11 @@
 #define CLOCK_PIN 13
 #define CS_PIN 10
 
+enum class GameError {
+    Ok,
+    Error
+};
+
 class Game {
 protected:
     Game();
@@ -19,5 +24,5 @@ public:
     static float get_axis_y();
     static void setup();
 
-    virtual void update(float delta);
+    virtual GameError update(float delta);
 };

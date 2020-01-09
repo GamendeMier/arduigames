@@ -25,5 +25,5 @@ private:
 public:
     Arkanoid();
 
-    void update(float delta);
+    GameError update(float delta);
 };

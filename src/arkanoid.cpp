@@ -7,7 +7,7 @@ Arkanoid::Arkanoid(): Game() {
     state = State::Left;
 }
 
-void Arkanoid::update(float delta) {
+GameError Arkanoid::update(float delta) {
     set_led((int)ball.x, (int)ball.y, true);
 
     ball.x += ball_velocity.x * delta;
@@ -39,6 +39,8 @@ void Arkanoid::update(float delta) {
     set_led(((int)paddle_pos)-1, 7, true);
     set_led( (int)paddle_pos   , 7, true);
     set_led(((int)paddle_pos)+1, 7, true);
+
+    return GameError::Ok;
 }
 
 void Arkanoid::calculate_collision() {
