@@ -16,8 +16,8 @@ Snake::Snake(int start_len): Game() {
 }
 
 void Snake::update(float delta) {
-    auto ax = Game::get_axis_x() - 512.f;
-    auto ay = Game::get_axis_y() - 512.f;
+    auto ax = Game::get_axis_x();
+    auto ay = Game::get_axis_y();
 
     if (abs(ax) > abs(ay)) {
         // Left/RIght

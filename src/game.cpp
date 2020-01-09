@@ -16,11 +16,11 @@ void Game::setup() {
 
 
 float Game::get_axis_x() {
-    return analogRead(A0);
+    return analogRead(A0)-512.f;
 }
 
 float Game::get_axis_y() {
-    return analogRead(A1);
+    return analogRead(A1)-512.f;
 }
 
 bool Game::button_pressed() {
