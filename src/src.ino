@@ -1,5 +1,4 @@
 #include "game.h"
-#include "gameselector.h"
 #include "snake.h"
 
 Game *game;
