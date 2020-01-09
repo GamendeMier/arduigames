@@ -11,6 +11,11 @@ void setup() {
     game = new GameSelector();
 }
 
+int new_time = millis();
+
 void loop() {
-    game->update(0.0005f);
+    int old_time = new_time;
+    new_time = millis();
+
+    game->update(((float)new_time-(float)old_time)/1000);
 }
