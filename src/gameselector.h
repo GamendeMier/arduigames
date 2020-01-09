@@ -10,6 +10,8 @@ private:
 
     float current_selection;
 
+    const int select_row = 4;
+
 public:
     GameSelector();
 
