@@ -40,3 +40,6 @@ void Arkanoid::update(float delta) {
     set_led( (int)paddle_pos   , 7, true);
     set_led(((int)paddle_pos)+1, 7, true);
 }
+
+void Arkanoid::calculate_collision() {
+}
