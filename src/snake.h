@@ -5,10 +5,12 @@
 
 class Snake : public Game {
 private:
+    const float dead_zone = 128.f;
+
     Direction dir;
 
     Vec2<float> head;
-    Vec2<int> tail[8*8];
+    Vec2<int> tail[64];
 
     int tail_len;
 

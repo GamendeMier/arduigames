@@ -21,15 +21,15 @@ void Snake::update(float delta) {
 
     if (abs(ax) > abs(ay)) {
         // Left/RIght
-        if (ax < 0) {
+        if (ax < - dead_zone) {
             dir = Direction::Left;
-        } else {
+        } else if (ax > dead_zone){
             dir = Direction::Right;
         }
     } else {
-        if (ay < 0) {
+        if (ay < - dead_zone) {
             dir = Direction::Down;
-        } else {
+        } else if (ay > dead_zone){
             dir = Direction::Up;
         }
     }
