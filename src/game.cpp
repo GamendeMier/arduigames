@@ -30,3 +30,11 @@ bool Game::button_pressed() {
 void Game::set_led(int x, int y, bool state) {
     _lc.setLed(0, x, y, state);
 }
+
+void Game::clear_display() {
+	_lc.clearDisplay(0);
+}
+
+void Game::set_char(int pos, char value) {
+	_lc.setChar(0, pos, value, false);
+}
