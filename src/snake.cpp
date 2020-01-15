@@ -91,7 +91,7 @@ GameError Snake::update(float delta) {
             break;
         }
 
-		// TODO: set head to reset
+		head.x = (float)(int)head.x + 0.5f;
 
 		for (int i = 1; i < tail_len; i++) {
 			if (tail[i].x == tail[0].x && tail[i].y == tail[0].y)
