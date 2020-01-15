@@ -18,6 +18,8 @@ protected:
     static bool button_pressed();
 
     void set_led(int x, int y, bool state);
+	void clear_display();
+	void set_char(int pos, char value);
 
 public:
     static float get_axis_x();

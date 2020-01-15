@@ -1,5 +1,7 @@
 #include "snake.h"
 
+int snake_final_score;
+
 Snake::Snake(int start_len): Game() {
     tail_len = start_len;
 

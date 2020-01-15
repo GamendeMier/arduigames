@@ -3,7 +3,6 @@
 #include "game.h"
 #include "util.h"
 
-int snake_final_score;
 
 class Snake : public Game {
 private:
