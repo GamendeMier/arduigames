@@ -12,7 +12,7 @@ enum class GameError {
 };
 
 class Game {
-protected:
+public:
     Game();
 
     static bool button_pressed();
@@ -21,7 +21,6 @@ protected:
 	void clear_display();
 	void set_char(int pos, char value);
 
-public:
     static float get_axis_x();
     static float get_axis_y();
     static void setup();
