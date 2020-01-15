@@ -1,7 +1,5 @@
 #include "snake.h"
 
-int snake_final_score;
-
 Snake::Snake(int start_len): Game() {
     tail_len = start_len;
 
@@ -98,7 +96,6 @@ GameError Snake::update(float delta) {
 
 		for (int i = 1; i < tail_len; i++) {
 			if (tail[i].x == tail[0].x && tail[i].y == tail[0].y) {
-				snake_final_score = tail_len;
 				return GameError::Error;
 			}
 		}
