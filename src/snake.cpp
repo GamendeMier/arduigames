@@ -91,6 +91,11 @@ GameError Snake::update(float delta) {
             break;
         }
 
+		for (int i = 1; i < tail_len; i++) {
+			if (tail[i].x == tail[0].x && tail[i].y == tail[0].y)
+				return GameError::Error;
+		}
+
         set_led(tail[0].x, tail[0].y, true);
     }
 
