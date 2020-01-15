@@ -52,7 +52,7 @@ GameError Snake::update(float delta) {
         (int)head.x != tail[0].x ||
         (int)head.y != tail[0].y
    ) {
-		if (head.x > 7.0f || head.x < 0.0f || head.y > 7.0f || head.y < 0.0f)
+		if (head.x > 8.0f || head.x < -1.0f || head.y > 8.0f || head.y < -1.0f)
 			return GameError::Error;
 
         if ((int)head.x == candy.x && (int)head.y == candy.y) {
@@ -90,6 +90,8 @@ GameError Snake::update(float delta) {
             tail[0].x += 1;
             break;
         }
+
+		// TODO: set head to reset
 
 		for (int i = 1; i < tail_len; i++) {
 			if (tail[i].x == tail[0].x && tail[i].y == tail[0].y)
