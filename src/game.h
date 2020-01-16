@@ -19,7 +19,7 @@ public:
 
     void set_led(int x, int y, bool state);
 	void clear_display();
-	void set_char(int pos, char value);
+	void set_char(int value);
 
     static float get_axis_x();
     static float get_axis_y();
