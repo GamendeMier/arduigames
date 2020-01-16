@@ -24,7 +24,7 @@ void loop() {
         if (error == GameError::Error) {
             is_dead = true;
 			game->clear_display();
-			game->set_char(game->tail_len);
+			game->set_char(game->tail_len - 4);
         }
     }
 }
